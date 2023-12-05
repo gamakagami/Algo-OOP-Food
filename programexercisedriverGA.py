@@ -1,14 +1,14 @@
 from programexercise import programExerciesGA
 
 def addToCartGA():
-    listOfFoods = []
-    numberOfFoods = int(input("How many items will you order today? "))
+    Foods = []
+    numOfFoods = int(input("How many items will you order today? "))
 
-    while numberOfFoods<1:
+    while numOfFoods<1:
         print("Number of items must be at least 1")
-        numberOfFoods = int(input("How many items will you order today? "))
+        numOfFoods = int(input("How many items will you order today? "))
 
-    for i in range(numberOfFoods):
+    for i in range(numOfFoods):
 
         print(f"Item #{i+1}-")
 
@@ -19,11 +19,9 @@ def addToCartGA():
         while foodAmount <= 0 :
             foodAmount = float(input("Enter amount of pounds (Number must be greater than 0): "))
 
-        listOfFoods.append(programExerciesGA(nameOfFood, foodAmount))
+        Foods.append(programExerciesGA(nameOfFood, foodAmount))
     
-    return listOfFoods
-
-
+    return Foods
 def shoppingCartGA(listOfFood):
     print("Here's a summary of the items purchased:")
     print("---------------------------")
@@ -49,8 +47,8 @@ def totalCostCalculatorGA(listOfFood):
         totalPriceRounded = "{:.2f}".format(totalPrice)
     print(f"Total cost: ${totalPriceRounded}")
 def startFunctionGA():
-    listOfFood = addToCartGA()
-    shoppingCartGA(listOfFood)
-    totalCostCalculatorGA(listOfFood)
+    Food = addToCartGA()
+    shoppingCartGA(Food)
+    totalCostCalculatorGA(Food)
 
 startFunctionGA()
